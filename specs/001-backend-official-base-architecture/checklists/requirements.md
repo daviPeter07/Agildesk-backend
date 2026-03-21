@@ -1,4 +1,4 @@
-# Specification Quality Checklist: Arquitetura Base do Modulo Chat
+# Specification Quality Checklist: Arquitetura Base Oficial do Backend
 
 **Purpose**: Validate specification completeness and quality before proceeding to planning
 **Created**: 2026-03-21

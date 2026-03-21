@@ -182,7 +182,7 @@ function Get-ProjectStructure {
         [Parameter(Mandatory=$false)]
         [string]$ProjectType
     )
-    if ($ProjectType -match 'web') { return "backend/`nfrontend/`ntests/" } else { return "src/`ntests/" } 
+    if ($ProjectType -match 'web' -and $ProjectType -notmatch 'backend') { return "backend/`nfrontend/`ntests/" } else { return "src/`ntests/" } 
 }
 
 function Get-CommandsForLanguage { 
@@ -194,6 +194,7 @@ function Get-CommandsForLanguage {
         'Python' { return "cd src; pytest; ruff check ." }
         'Rust' { return "cargo test; cargo clippy" }
         'JavaScript|TypeScript' { return "npm test; npm run lint" }
+        'PHP' { return "composer install; composer test" }
         default { return "# Add commands for $Lang" }
     }
 }
